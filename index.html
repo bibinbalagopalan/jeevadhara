@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeevadhara - The Future of Ayurveda</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="background-canvas"></canvas>
+
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">
+                <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 2.5C57.5 20 75 32.5 90 35C75 37.5 57.5 50 50 67.5C42.5 50 25 37.5 10 35C25 32.5 42.5 20 50 2.5Z" fill="url(#grad1)"/><path d="M22.5 77.5C35 70 45 55 47.5 40C50 55 60 70 72.5 77.5C60 85 50 100 47.5 97.5C45 100 35 85 22.5 77.5Z" fill="url(#grad2)"/><defs><linearGradient id="grad1" x1="50" y1="2.5" x2="50" y2="67.5" gradientUnits="userSpaceOnUse"><stop stop-color="#EAEAEA"/><stop offset="1" stop-color="#BDBDBD"/></linearGradient><linearGradient id="grad2" x1="47.5" y1="40" x2="47.5" y2="97.5" gradientUnits="userSpaceOnUse"><stop stop-color="#EAEAEA"/><stop offset="1" stop-color="#BDBDBD"/></linearGradient></defs></svg>
+                <span>Jeevadhara</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#use-cases">Use Cases</a></li>
+            </ul>
+            <a href="#waitlist" class="nav-cta">Join Waitlist</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="glass-card hero-card animate-on-scroll">
+                <span class="tagline">Ancient Wisdom, Intelligent Insights.</span>
+                <h2>The Future of Ayurvedic Practice</h2>
+                <p class="subtitle">Our AI-powered clinical assistant for precise diagnosis and personalized patient care is coming soon from Kozhikode, Kerala.</p>
+                <form class="cta-form" id="waitlist">
+                    <input type="email" placeholder="Enter your email to get notified" required>
+                    <button type="submit">Request Early Access</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="vision" class="vision container">
+            <h3 class="section-title animate-on-scroll">Our Vision for a Connected Future</h3>
+            <div class="glass-card animate-on-scroll">
+                <ul class="vision-list">
+                    <li><div><strong>Integrate Ayurveda with Modern Clinical Practice</strong><p>Empower doctors to incorporate Ayurvedic knowledge alongside allopathic care for holistic, patient-centered treatment plans.</p></div></li>
+                    <li><div><strong>Build the World's Largest Open Repository of Ayurvedic Knowledge</strong><p>Digitize and structure classical texts and case studies into an intelligent knowledge graph for research and clinical use.</p></div></li>
+                    <li><div><strong>Democratize Access to Ayurvedic Expertise</strong><p>Help rural clinics, under-resourced hospitals, and newer practitioners access standardized, high-quality Ayurvedic guidance.</p></div></li>
+                    <li><div><strong>Support Evidence-Based Ayurveda</strong><p>Promote scientific validation by integrating classical knowledge with modern clinical data, patient outcomes, and global best practices.</p></div></li>
+                    <li><div><strong>Preserve, Evolve, and Globalize Ayurveda</strong><p>Serve as a living bridge between traditional knowledge and modern research, making Ayurveda more relevant and globally respected.</p></div></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="features" class="features container">
+            <h3 class="section-title animate-on-scroll">Core AI Features</h3>
+            <div class="glass-card animate-on-scroll">
+                <div class="tabs-container">
+                    <div class="tabs-nav">
+                        <button class="tab-link active" data-tab="tab-1">1. Diagnostic Assistant</button>
+                        <button class="tab-link" data-tab="tab-2">2. Treatment Recommender</button>
+                        <button class="tab-link" data-tab="tab-3">3. Knowledge Engine</button>
+                        <button class="tab-link" data-tab="tab-4">4. Case-Based Learning</button>
+                        <button class="tab-link" data-tab="tab-5">5. Herbal Database</button>
+                        <button class="tab-link" data-tab="tab-6">6. Evidence Integration</button>
+                        <button class="tab-link" data-tab="tab-7">7. Multilingual & Voice</button>
+                        <button class="tab-link" data-tab="tab-8">8. EHR Integration</button>
+                        <button class="tab-link" data-tab="tab-9">9. Collaborative Wiki</button>
+                        <button class="tab-link" data-tab="tab-10">10. Research Tools</button>
+                    </div>
+                    <div class="tabs-content">
+                        <div id="tab-1" class="tab-pane active">
+                            <h4>Intelligent Diagnostic Assistant</h4>
+                            <p>Suggests probable doshic imbalances (Vikruti & Prakruti) based on patient inputs. Provides differential diagnosis with confidence levels from Ayurvedic and integrative viewpoints, and supports <i>Nadi & Jihva Pariksha</i> with AI-powered sensor integration.</p>
+                        </div>
+                        <div id="tab-2" class="tab-pane">
+                            <h4>Personalized Treatment Recommender</h4>
+                            <p>Suggests herbal formulations, Panchakarma therapies, and lifestyle changes. Crucially, it warns about contraindications and potential modern drug interactions for integrative treatment plans.</p>
+                        </div>
+                        <div id="tab-3" class="tab-pane">
+                            <h4>Text & Knowledge Engine</h4>
+                            <p>A semantic search interface for classical texts like <i>Charaka Samhita</i>, modern research, and regional knowledge. Features an NLP engine trained on Sanskrit, Malayalam, Tamil, etc., to parse original formulations.</p>
+                        </div>
+                         <div id="tab-4" class="tab-pane">
+                            <h4>Case-Based Learning & Decision Support</h4>
+                            <p>Access curated case repositories with outcomes. A powerful "case similarity" engine compares current patients with past cases for advanced pattern recognition and treatment suggestions.</p>
+                        </div>
+                        <div id="tab-5" class="tab-pane">
+                            <h4>Herbal Database & Interaction Checker</h4>
+                            <p>An extensive Materia Medica with pharmacological actions (Rasa, Guna, Virya, etc.) and modern phytochemistry. Includes a robust interaction checker for polyherbal formulations and allopathic medicines.</p>
+                        </div>
+                        <div id="tab-6" class="tab-pane">
+                            <h4>Evidence Integration Engine</h4>
+                            <p>Links Ayurvedic treatments to available clinical trials from PubMed, AYUSH research portals, and CCRAS. Uses machine learning to predict treatment efficacy based on integrated evidence.</p>
+                        </div>
+                        <div id="tab-7" class="tab-pane">
+                            <h4>Multilingual & Voice Support</h4>
+                            <p>Interface available in English, Sanskrit, Hindi, Malayalam, Tamil, and more. Supports voice-based interaction for faster data input, essential for busy clinics or rural environments.</p>
+                        </div>
+                        <div id="tab-8" class="tab-pane">
+                            <h4>Patient Management & EHR Integration</h4>
+                            <p>A seamless plug-in for existing hospital Electronic Health Records (EHR). Maintains secure patient profiles with Prakruti/Vikruti, treatment history, and progress tracking.</p>
+                        </div>
+                        <div id="tab-9" class="tab-pane">
+                            <h4>Collaborative Knowledge Graph & Wiki</h4>
+                            <p>A community-driven, peer-reviewed wiki for contributing new formulations, folk remedies, and case outcomes. Physicians can contribute and validate entries, building a collective intelligence.</p>
+                        </div>
+                        <div id="tab-10" class="tab-pane">
+                            <h4>Research Tools for Ayurveda</h4>
+                            <p>Provides a suite of tools for designing clinical trials, mining Ayurvedic literature, and standardizing classical formulations for modern pharmacovigilance and validation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="philosophy" class="impact-section container">
+            <div class="impact-grid">
+                <div class="animate-on-scroll">
+                    <h3 class="section-title">Open Source Principles</h3>
+                    <div class="glass-card">
+                         <ul class="vision-list">
+                            <li><div><strong>Modular Architecture</strong><p>Plug-and-play AI modules for diagnosis, formulation, EHR integration, and more.</p></div></li>
+                            <li><div><strong>Transparent Models</strong><p>Using explainable AI (XAI) to ensure decision-making logic is clear and trustworthy.</p></div></li>
+                            <li><div><strong>Open Dataset Contributions</strong><p>A framework for practitioners and institutions to contribute to a shared, anonymized dataset.</p></div></li>
+                            <li><div><strong>Community Governance</strong><p>Exploring governance via foundations or DAOs to ensure the platform serves the community.</p></div></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="use-cases" class="animate-on-scroll">
+                    <h3 class="section-title">Use Cases</h3>
+                    <div class="glass-card">
+                         <ul class="vision-list">
+                            <li><div><strong>Integrative Hospitals</strong><p>For use in oncology, chronic care, and post-operative rehab to provide holistic patient care.</p></div></li>
+                            <li><div><strong>Rural & Village Centers</strong><p>AI-aided diagnosis and treatment plans for areas without full-time expert Vaidyas.</p></div></li>
+                            <li><div><strong>Medical Colleges</strong><p>A powerful tool for research, teaching, and providing students with standardized practical exposure.</p></div></li>
+                            <li><div><strong>Pharmacovigilance</strong><p>Monitoring adverse effects and treatment outcomes at a large scale to improve safety and efficacy.</p></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-final container animate-on-scroll">
+             <h2>Join the Revolution in Ayurvedic Care.</h2>
+             <form class="cta-form">
+                <input type="email" placeholder="Your professional email address" required>
+                <button type="submit">Stay Updated</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>&copy; 2025 Jeevadhara Online </p>
+        <div class="social-links">
+            <a href="#" aria-label="LinkedIn">L</a>
+            <a href="#" aria-label="Twitter">X</a>
+        </div>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
