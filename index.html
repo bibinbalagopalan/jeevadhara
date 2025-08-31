@@ -1,170 +1,371 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeevadhara - The Future of Ayurveda</title>
-    
+    <title>Jeevadhara - AI for a Billion Breaths</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1f2937; /* gray-800 */
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-gradient-text {
+            background: linear-gradient(to right, #0d9488, #f97316); /* teal-600 to orange-500 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-button {
+            background: linear-gradient(to right, #f97316, #ea580c); /* orange-500 to orange-600 */
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3), 0 4px 6px -2px rgba(249, 115, 22, 0.2);
+        }
+        .feature-card {
+            transition: all 0.3s ease-in-out;
+            border: 1px solid #e5e7eb; /* gray-200 */
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: #0d9488; /* teal-600 */
+            box-shadow: 0 20px 25px -5px rgba(13, 148, 136, 0.1), 0 10px 10px -5px rgba(13, 148, 136, 0.04);
+        }
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+        #parallax-svg {
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            opacity: 0.1;
+            will-change: transform;
+        }
+        .countdown-box {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
-<body>
+<body class="bg-white">
 
-    <canvas id="background-canvas"></canvas>
-
-    <header>
-        <nav class="container">
-            <a href="#" class="logo">
-                <svg width="42" height="42" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 2.5C57.5 20 75 32.5 90 35C75 37.5 57.5 50 50 67.5C42.5 50 25 37.5 10 35C25 32.5 42.5 20 50 2.5Z" fill="url(#grad1)"/><path d="M22.5 77.5C35 70 45 55 47.5 40C50 55 60 70 72.5 77.5C60 85 50 100 47.5 97.5C45 100 35 85 22.5 77.5Z" fill="url(#grad2)"/><defs><linearGradient id="grad1" x1="50" y1="2.5" x2="50" y2="67.5" gradientUnits="userSpaceOnUse"><stop stop-color="#EAEAEA"/><stop offset="1" stop-color="#BDBDBD"/></linearGradient><linearGradient id="grad2" x1="47.5" y1="40" x2="47.5" y2="97.5" gradientUnits="userSpaceOnUse"><stop stop-color="#EAEAEA"/><stop offset="1" stop-color="#BDBDBD"/></linearGradient></defs></svg>
-                <span>Jeevadhara</span>
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <svg class="h-8 w-8 text-teal-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 12.5l3 3m0 0l3-3m-3 3v-6m0 6h-3m3 0h3m-6 3.75h12A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                </svg>
+                <h1 class="text-2xl font-bold text-gray-800">Jeevadhara</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-teal-600 transition">Features</a>
+                <a href="#ecosystem" class="text-gray-600 hover:text-teal-600 transition">Ecosystem</a>
+                <a href="#vision" class="text-gray-600 hover:text-teal-600 transition">Vision</a>
+            </nav>
+            <a href="#cta" class="cta-button text-white font-bold py-2 px-5 rounded-full shadow-lg">
+                Join Us
             </a>
-            <ul class="nav-links">
-                <li><a href="#vision">Vision</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#philosophy">Philosophy</a></li>
-                <li><a href="#use-cases">Use Cases</a></li>
-            </ul>
-            <a href="#waitlist" class="nav-cta">Join Waitlist</a>
-        </nav>
+        </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="glass-card hero-card animate-on-scroll">
-                <span class="tagline">Ancient Wisdom, Intelligent Insights.</span>
-                <h2>The Future of Ayurvedic Practice</h2>
-                <p class="subtitle">Our AI-powered clinical assistant for precise diagnosis and personalized patient care is coming soon from Kozhikode, Kerala.</p>
-                <form class="cta-form" id="waitlist">
-                    <input type="email" placeholder="Enter your email to get notified" required>
-                    <button type="submit">Request Early Access</button>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-gray-50">
+            <div class="parallax-bg">
+                <!-- Abstract futuristic background SVG -->
+                <svg id="parallax-svg" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color: #0d9488;"/>
+                            <stop offset="100%" style="stop-color: #f97316;"/>
+                        </linearGradient>
+                    </defs>
+                    <g stroke="url(#g)" stroke-opacity="0.5" fill="none">
+                        <path d="M 100 100 Q 200 300 300 200 T 500 200" stroke-width="1"/>
+                        <path d="M 200 800 Q 350 700 400 850 T 600 800" stroke-width="0.5"/>
+                        <path d="M 800 150 Q 700 300 900 400 T 800 600" stroke-width="1.5"/>
+                        <path d="M 50 500 Q 250 450 300 600 T 100 700" stroke-width="0.75"/>
+                        <circle cx="150" cy="150" r="3" stroke-width="2"/>
+                        <circle cx="450" cy="220" r="2" stroke-width="1"/>
+                        <circle cx="850" cy="450" r="4" stroke-width="2"/>
+                        <circle cx="200" cy="650" r="3" stroke-width="1.5"/>
+                        <circle cx="550" cy="820" r="2" stroke-width="1"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="container mx-auto px-6 text-center z-10">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-gray-800 leading-tight">
+                    AI for a <span class="hero-gradient-text">Billion Breaths</span>.
+                </h1>
+                <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-gray-600">
+                    An open, multi-modal AI platform decoding India's unique health data patterns to build a more equitable and predictive future for healthcare. For everyone, everywhere.
+                </p>
+
+                <!-- Countdown Timer -->
+                <div class="mt-12">
+                    <h3 class="text-xl font-semibold text-teal-700 tracking-wider uppercase">Launching Q1 2026</h3>
+                    <div id="countdown" class="mt-4 flex justify-center items-center space-x-2 md:space-x-4 text-gray-800">
+                        <div class="p-4 rounded-lg min-w-[80px] md:min-w-[100px] text-center bg-white/50 shadow-md">
+                            <span id="days" class="text-4xl md:text-5xl font-bold">00</span>
+                            <span class="block text-xs md:text-sm font-medium uppercase text-gray-500">Days</span>
+                        </div>
+                        <div class="p-4 rounded-lg min-w-[80px] md:min-w-[100px] text-center bg-white/50 shadow-md">
+                            <span id="hours" class="text-4xl md:text-5xl font-bold">00</span>
+                            <span class="block text-xs md:text-sm font-medium uppercase text-gray-500">Hours</span>
+                        </div>
+                        <div class="p-4 rounded-lg min-w-[80px] md:min-w-[100px] text-center bg-white/50 shadow-md">
+                            <span id="minutes" class="text-4xl md:text-5xl font-bold">00</span>
+                            <span class="block text-xs md:text-sm font-medium uppercase text-gray-500">Minutes</span>
+                        </div>
+                        <div class="p-4 rounded-lg min-w-[80px] md:min-w-[100px] text-center bg-white/50 shadow-md">
+                            <span id="seconds" class="text-4xl md:text-5xl font-bold">00</span>
+                            <span class="block text-xs md:text-sm font-medium uppercase text-gray-500">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#cta" class="mt-12 inline-block cta-button text-white text-lg font-bold py-4 px-10 rounded-full shadow-lg">
+                    Get Notified & Join the Community
+                </a>
+            </div>
+        </section>
+
+        <!-- Problem & Promise Section -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800">From Fragmented Data to Holistic Insight.</h2>
+                <div class="max-w-4xl mx-auto">
+                    <p class="mt-6 text-lg text-gray-600">
+                        Healthcare data today is trapped in silos—unreadable scans, complex reports, and disconnected patient notes in countless languages. This fragmentation prevents us from seeing the full picture, leading to reactive care instead of proactive prevention.
+                    </p>
+                    <p class="mt-4 text-lg text-gray-600">
+                        Jeevadhara (from <i>Jeeva</i>, life + <i>Dhara</i>, flow) is an open-source initiative to unify this chaos. We're building an intelligent stream of health information that empowers doctors, researchers, and public health officials to see earlier, act faster, and understand deeper.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Features Section -->
+        <section id="features" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800">The Power of Unified Intelligence.</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">A new paradigm in health-tech, built on three core principles.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="feature-card bg-white p-8 rounded-xl shadow-sm">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-teal-100 mb-6">
+                            <svg class="h-8 w-8 text-teal-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639l3.433-3.433a1.012 1.012 0 011.414 0l1.414 1.414a1.012 1.012 0 010 1.414l-2.036 2.036a1.012 1.012 0 01-.707.293H3.75a1.012 1.012 0 01-.707-.293l-2.036-2.036a1.012 1.012 0 010-1.414l2.036-2.036m13.39 5.632l-3.433-3.433a1.012 1.012 0 010-.639l3.433-3.433a1.012 1.012 0 011.414 0l1.414 1.414a1.012 1.012 0 010 1.414l-2.036 2.036a1.012 1.012 0 01-.707.293H16.5a1.012 1.012 0 01-.707-.293l-2.036-2.036a1.012 1.012 0 010-1.414l2.036-2.036" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">See the Unseen</h3>
+                        <p class="text-gray-600">Our multi-modal AI reads everything: radiology images (X-rays, CT, MRI), lab reports, and even handwritten notes to identify subtle, early-stage disease markers invisible to the human eye.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="feature-card bg-white p-8 rounded-xl shadow-sm">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-orange-100 mb-6">
+                            <svg class="h-8 w-8 text-orange-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Built for India, Ready for the World</h3>
+                        <p class="text-gray-600">Uniquely trained on Indian health data patterns—tackling malaria, TB, and diabetes. Our multi-lingual support and alignment with WHO & ICD standards make Jeevadhara globally adaptable.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="feature-card bg-white p-8 rounded-xl shadow-sm">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mb-6">
+                            <svg class="h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 100 15 7.5 7.5 0 000-15zM21 21l-5.197-5.197" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">Beyond an Individual Diagnosis</h3>
+                        <p class="text-gray-600">Jeevadhara aggregates anonymized data to generate powerful epidemiological insights, mapping disease trends in real-time and enabling predictive alerts for potential outbreaks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ecosystem Section -->
+        <section id="ecosystem" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800">An Open Platform for a Collaborative Future.</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Empowering every stakeholder in the healthcare chain.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                     <!-- Column 1 -->
+                    <div class="p-8">
+                        <img src="https://placehold.co/100x100/f0fdfa/0d9488?text=Dev" class="rounded-full mx-auto mb-4" alt="Developers">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">For Developers & Startups</h3>
+                        <p class="text-gray-600">Access our 100% free repository. Use our powerful APIs & SDKs to integrate Jeevadhara into your applications, join hackathons, and shape the future of health-tech.</p>
+                    </div>
+                     <!-- Column 2 -->
+                    <div class="p-8">
+                        <img src="https://placehold.co/100x100/f0fdfa/0d9488?text=Doc" class="rounded-full mx-auto mb-4" alt="Clinicians">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">For Hospitals & Clinicians</h3>
+                        <p class="text-gray-600">Embed a powerful decision-support tool into your workflow. Get faster, more accurate readings, reduce diagnostic overhead, and focus on what matters: your patients.</p>
+                    </div>
+                     <!-- Column 3 -->
+                    <div class="p-8">
+                         <img src="https://placehold.co/100x100/f0fdfa/0d9488?text=NGO" class="rounded-full mx-auto mb-4" alt="NGOs">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-3">For Public Health & NGOs</h3>
+                        <p class="text-gray-600">Leverage real-time health dashboards to monitor disease trends, allocate resources effectively, and deploy preventive measures before outbreaks occur.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section id="vision" class="py-20 bg-teal-800 text-white">
+            <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                     <h2 class="text-4xl md:text-5xl font-bold">Introducing the Digital Health Twin.</h2>
+                     <p class="mt-6 text-lg text-teal-100">
+                         Jeevadhara's vision extends beyond diagnostics. By integrating wearable data, voice-based inputs, and lifestyle risk modeling, we aim to create a virtual, long-term health profile for every individual.
+                     </p>
+                     <ul class="mt-6 space-y-4 text-left">
+                         <li class="flex items-start">
+                             <svg class="h-6 w-6 mr-3 text-orange-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                             <span><strong class="font-semibold text-white">Predictive alerts</strong> based on your unique lifestyle and biometric data.</span>
+                         </li>
+                         <li class="flex items-start">
+                             <svg class="h-6 w-6 mr-3 text-orange-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                             <span><strong class="font-semibold text-white">Personalized recommendations</strong> for proactive health management.</span>
+                         </li>
+                         <li class="flex items-start">
+                             <svg class="h-6 w-6 mr-3 text-orange-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                             <span><strong class="font-semibold text-white">A continuous flow of information</strong> for lifelong wellness.</span>
+                         </li>
+                     </ul>
+                </div>
+                <div>
+                    <!-- Placeholder for a futuristic visual -->
+                    <div class="p-8 bg-teal-700/50 rounded-lg">
+                        <img src="https://placehold.co/600x400/0f766e/ffffff?text=Digital+Twin+Concept" alt="Digital Health Twin concept" class="rounded-lg shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section id="cta" class="py-20 bg-gray-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800">Join the Flow. Be a Part of the Health Revolution.</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">The journey begins now. Sign up for exclusive updates, be the first to know about our launch, and get invited to our developer community and early-access programs.</p>
+                <form class="mt-8 max-w-lg mx-auto flex flex-col sm:flex-row gap-4">
+                    <input type="email" placeholder="your.email@example.com" class="w-full px-5 py-3 rounded-full border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition" required>
+                    <button type="submit" class="cta-button text-white font-bold py-3 px-8 rounded-full shadow-lg whitespace-nowrap">Keep Me Updated</button>
                 </form>
             </div>
         </section>
-
-        <section id="vision" class="vision container">
-            <h3 class="section-title animate-on-scroll">Our Vision for a Connected Future</h3>
-            <div class="glass-card animate-on-scroll">
-                <ul class="vision-list">
-                    <li><div><strong>Integrate Ayurveda with Modern Clinical Practice</strong><p>Empower doctors to incorporate Ayurvedic knowledge alongside allopathic care for holistic, patient-centered treatment plans.</p></div></li>
-                    <li><div><strong>Build the World's Largest Open Repository of Ayurvedic Knowledge</strong><p>Digitize and structure classical texts and case studies into an intelligent knowledge graph for research and clinical use.</p></div></li>
-                    <li><div><strong>Democratize Access to Ayurvedic Expertise</strong><p>Help rural clinics, under-resourced hospitals, and newer practitioners access standardized, high-quality Ayurvedic guidance.</p></div></li>
-                    <li><div><strong>Support Evidence-Based Ayurveda</strong><p>Promote scientific validation by integrating classical knowledge with modern clinical data, patient outcomes, and global best practices.</p></div></li>
-                    <li><div><strong>Preserve, Evolve, and Globalize Ayurveda</strong><p>Serve as a living bridge between traditional knowledge and modern research, making Ayurveda more relevant and globally respected.</p></div></li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="features" class="features container">
-            <h3 class="section-title animate-on-scroll">Core AI Features</h3>
-            <div class="glass-card animate-on-scroll">
-                <div class="tabs-container">
-                    <div class="tabs-nav">
-                        <button class="tab-link active" data-tab="tab-1">1. Diagnostic Assistant</button>
-                        <button class="tab-link" data-tab="tab-2">2. Treatment Recommender</button>
-                        <button class="tab-link" data-tab="tab-3">3. Knowledge Engine</button>
-                        <button class="tab-link" data-tab="tab-4">4. Case-Based Learning</button>
-                        <button class="tab-link" data-tab="tab-5">5. Herbal Database</button>
-                        <button class="tab-link" data-tab="tab-6">6. Evidence Integration</button>
-                        <button class="tab-link" data-tab="tab-7">7. Multilingual & Voice</button>
-                        <button class="tab-link" data-tab="tab-8">8. EHR Integration</button>
-                        <button class="tab-link" data-tab="tab-9">9. Collaborative Wiki</button>
-                        <button class="tab-link" data-tab="tab-10">10. Research Tools</button>
-                    </div>
-                    <div class="tabs-content">
-                        <div id="tab-1" class="tab-pane active">
-                            <h4>Intelligent Diagnostic Assistant</h4>
-                            <p>Suggests probable doshic imbalances (Vikruti & Prakruti) based on patient inputs. Provides differential diagnosis with confidence levels from Ayurvedic and integrative viewpoints, and supports <i>Nadi & Jihva Pariksha</i> with AI-powered sensor integration.</p>
-                        </div>
-                        <div id="tab-2" class="tab-pane">
-                            <h4>Personalized Treatment Recommender</h4>
-                            <p>Suggests herbal formulations, Panchakarma therapies, and lifestyle changes. Crucially, it warns about contraindications and potential modern drug interactions for integrative treatment plans.</p>
-                        </div>
-                        <div id="tab-3" class="tab-pane">
-                            <h4>Text & Knowledge Engine</h4>
-                            <p>A semantic search interface for classical texts like <i>Charaka Samhita</i>, modern research, and regional knowledge. Features an NLP engine trained on Sanskrit, Malayalam, Tamil, etc., to parse original formulations.</p>
-                        </div>
-                         <div id="tab-4" class="tab-pane">
-                            <h4>Case-Based Learning & Decision Support</h4>
-                            <p>Access curated case repositories with outcomes. A powerful "case similarity" engine compares current patients with past cases for advanced pattern recognition and treatment suggestions.</p>
-                        </div>
-                        <div id="tab-5" class="tab-pane">
-                            <h4>Herbal Database & Interaction Checker</h4>
-                            <p>An extensive Materia Medica with pharmacological actions (Rasa, Guna, Virya, etc.) and modern phytochemistry. Includes a robust interaction checker for polyherbal formulations and allopathic medicines.</p>
-                        </div>
-                        <div id="tab-6" class="tab-pane">
-                            <h4>Evidence Integration Engine</h4>
-                            <p>Links Ayurvedic treatments to available clinical trials from PubMed, AYUSH research portals, and CCRAS. Uses machine learning to predict treatment efficacy based on integrated evidence.</p>
-                        </div>
-                        <div id="tab-7" class="tab-pane">
-                            <h4>Multilingual & Voice Support</h4>
-                            <p>Interface available in English, Sanskrit, Hindi, Malayalam, Tamil, and more. Supports voice-based interaction for faster data input, essential for busy clinics or rural environments.</p>
-                        </div>
-                        <div id="tab-8" class="tab-pane">
-                            <h4>Patient Management & EHR Integration</h4>
-                            <p>A seamless plug-in for existing hospital Electronic Health Records (EHR). Maintains secure patient profiles with Prakruti/Vikruti, treatment history, and progress tracking.</p>
-                        </div>
-                        <div id="tab-9" class="tab-pane">
-                            <h4>Collaborative Knowledge Graph & Wiki</h4>
-                            <p>A community-driven, peer-reviewed wiki for contributing new formulations, folk remedies, and case outcomes. Physicians can contribute and validate entries, building a collective intelligence.</p>
-                        </div>
-                        <div id="tab-10" class="tab-pane">
-                            <h4>Research Tools for Ayurveda</h4>
-                            <p>Provides a suite of tools for designing clinical trials, mining Ayurvedic literature, and standardizing classical formulations for modern pharmacovigilance and validation.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="philosophy" class="impact-section container">
-            <div class="impact-grid">
-                <div class="animate-on-scroll">
-                    <h3 class="section-title">Open Source Principles</h3>
-                    <div class="glass-card">
-                         <ul class="vision-list">
-                            <li><div><strong>Modular Architecture</strong><p>Plug-and-play AI modules for diagnosis, formulation, EHR integration, and more.</p></div></li>
-                            <li><div><strong>Transparent Models</strong><p>Using explainable AI (XAI) to ensure decision-making logic is clear and trustworthy.</p></div></li>
-                            <li><div><strong>Open Dataset Contributions</strong><p>A framework for practitioners and institutions to contribute to a shared, anonymized dataset.</p></div></li>
-                            <li><div><strong>Community Governance</strong><p>Exploring governance via foundations or DAOs to ensure the platform serves the community.</p></div></li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="use-cases" class="animate-on-scroll">
-                    <h3 class="section-title">Use Cases</h3>
-                    <div class="glass-card">
-                         <ul class="vision-list">
-                            <li><div><strong>Integrative Hospitals</strong><p>For use in oncology, chronic care, and post-operative rehab to provide holistic patient care.</p></div></li>
-                            <li><div><strong>Rural & Village Centers</strong><p>AI-aided diagnosis and treatment plans for areas without full-time expert Vaidyas.</p></div></li>
-                            <li><div><strong>Medical Colleges</strong><p>A powerful tool for research, teaching, and providing students with standardized practical exposure.</p></div></li>
-                            <li><div><strong>Pharmacovigilance</strong><p>Monitoring adverse effects and treatment outcomes at a large scale to improve safety and efficacy.</p></div></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-final container animate-on-scroll">
-             <h2>Join the Revolution in Ayurvedic Care.</h2>
-             <form class="cta-form">
-                <input type="email" placeholder="Your professional email address" required>
-                <button type="submit">Stay Updated</button>
-            </form>
-        </section>
     </main>
 
-    <footer class="container">
-        <p>&copy; 2025 Jeevadhara Online </p>
-        <div class="social-links">
-            <a href="#" aria-label="LinkedIn">L</a>
-            <a href="#" aria-label="Twitter">X</a>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <h3 class="text-xl font-bold text-white mb-2">Jeevadhara</h3>
+                    <p class="text-gray-400">An open-source initiative for global health.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white tracking-wider uppercase mb-4">Navigation</h4>
+                    <ul>
+                        <li class="mb-2"><a href="/about us.html" class="hover:text-white">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-500 cursor-not-allowed">Blog / Updates (Soon)</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-500 cursor-not-allowed">Documentation (Soon)</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white tracking-wider uppercase mb-4">Community</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-500 cursor-not-allowed"><span class="sr-only">GitHub</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg></a>
+                        <a href="#" class="text-gray-500 cursor-not-allowed"><span class="sr-only">Twitter</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
+                    </div>
+                </div>
+                <div>
+                     <h4 class="font-semibold text-white tracking-wider uppercase mb-4">Legal</h4>
+                     <ul>
+                        <li class="mb-2"><a href="/privacy.html" class="hover:text-white">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="/terms.html" class="hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Jeevadhara Project. A community-driven initiative.</p>
+            </div>
         </div>
     </footer>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-    <script src="script.js"></script>
 
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Parallax effect for hero background
+        const parallaxSvg = document.getElementById('parallax-svg');
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.pageYOffset;
+            if (parallaxSvg) {
+                parallaxSvg.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+            }
+        });
+
+        // Countdown timer logic
+        (function () {
+            // Set the launch date to Feb 1, 2026 (Q1)
+            const launchDate = new Date('Feb 1, 2026 00:00:00').getTime();
+
+            const countdownInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = launchDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Update the DOM
+                document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+                document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+                document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+                document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById('countdown').innerHTML = '<h3 class="text-2xl font-bold text-teal-600">Jeevadhara has Launched!</h3>';
+                }
+            }, 1000);
+        })();
+    </script>
 </body>
 </html>

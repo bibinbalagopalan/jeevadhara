@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Jeevadhara</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1f2937; /* gray-800 */
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-gradient-text {
+            background: linear-gradient(to right, #0d9488, #f97316); /* teal-600 to orange-500 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .cta-button {
+            background: linear-gradient(to right, #f97316, #ea580c); /* orange-500 to orange-600 */
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.3), 0 4px 6px -2px rgba(249, 115, 22, 0.2);
+        }
+        /* Timeline styles */
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2.5rem;
+            padding-left: 2.5rem; 
+        }
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0.4rem;
+            top: 0.5rem;
+            width: 2px;
+            height: 100%;
+            background-color: #e5e7eb; /* gray-200 */
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            height: 1rem;
+            width: 1rem;
+            border-radius: 9999px;
+            background-color: #fff;
+            border: 2px solid #0d9488; /* teal-600 */
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <svg class="h-8 w-8 text-teal-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 12.5l3 3m0 0l3-3m-3 3v-6m0 6h-3m3 0h3m-6 3.75h12A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" />
+                </svg>
+                <h1 class="text-2xl font-bold text-gray-800">Jeevadhara</h1>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html#features" class="text-gray-600 hover:text-teal-600 transition">Features</a>
+                <a href="index.html#ecosystem" class="text-gray-600 hover:text-teal-600 transition">Ecosystem</a>
+                <a href="index.html#vision" class="text-gray-600 hover:text-teal-600 transition">Vision</a>
+            </nav>
+            <a href="index.html#cta" class="cta-button text-white font-bold py-2 px-5 rounded-full shadow-lg">
+                Join Us
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Vision & Mission -->
+        <section class="py-20 bg-gray-50 text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Our Mission</h1>
+                <p class="mt-6 max-w-4xl mx-auto text-xl md:text-2xl text-gray-700 leading-relaxed">
+                    “To democratize medical diagnosis through AI — making accurate, automated diagnosis <span class="hero-gradient-text font-semibold">accessible to everyone, everywhere, for free</span>.”
+                </p>
+            </div>
+        </section>
+
+        <!-- The Story / Origin -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                 <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="max-w-xl">
+                        <h2 class="text-4xl font-bold text-gray-800">The Story of Jeevadhara</h2>
+                        <p class="mt-4 text-gray-600">Jeevadhara was born from a pressing need observed across India: the immense gap between urban and rural healthcare, the challenge of interpreting complex data quickly, and the lack of accessible diagnostic tools. This project was started to address these accessibility gaps and harness the power of automation for public good.</p>
+                        <p class="mt-4 text-gray-600">The name <strong class="text-teal-700">“Jeevadhara”</strong> combines the Sanskrit words for ‘life’ (Jeeva) and ‘flow’ (Dhara). It represents our vision of creating a continuous, intelligent stream of health information that sustains and protects life.</p>
+                    </div>
+                    <div>
+                        <img src="https://placehold.co/600x450/e0f2f1/0d9488?text=Origin" alt="Conceptual image of data flowing" class="rounded-lg shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Makes It Unique -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800">What Makes Us Unique</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500">
+                        <h3 class="text-xl font-bold text-gray-800">Open-Source & Community-Driven</h3>
+                        <p class="mt-2 text-gray-600">Built not for profit, but for impact. Our code is transparent and shaped by a global community.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-orange-500">
+                        <h3 class="text-xl font-bold text-gray-800">India-First, Global-Ready</h3>
+                        <p class="mt-2 text-gray-600">Trained on diverse Indian data for local accuracy, but built on global standards for worldwide application.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500">
+                        <h3 class="text-xl font-bold text-gray-800">Privacy-Focused AI</h3>
+                        <p class="mt-2 text-gray-600">We champion techniques like federated learning to train models without centralizing sensitive patient data.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-purple-500">
+                        <h3 class="text-xl font-bold text-gray-800">Built for Impact</h3>
+                        <p class="mt-2 text-gray-600">Our success is measured by lives improved, not by revenue generated. We are committed to being free forever.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800">Our Core Values</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">The principles that guide every decision we make.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 text-center">
+                    <div><h3 class="text-xl font-bold">Accessibility</h3><p class="text-gray-600">Healthcare AI for all.</p></div>
+                    <div><h3 class="text-xl font-bold">Transparency</h3><p class="text-gray-600">Open code, open science.</p></div>
+                    <div><h3 class="text-xl font-bold">Innovation</h3><p class="text-gray-600">Cutting-edge AI for diagnosis.</p></div>
+                    <div><h3 class="text-xl font-bold">Community</h3><p class="text-gray-600">Built together, for the world.</p></div>
+                    <div><h3 class="text-xl font-bold">Ethics</h3><p class="text-gray-600">Privacy, fairness, and trust.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Milestones & Timeline -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-800">Our Journey & Roadmap</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">From a concept to a global launch and beyond.</p>
+                </div>
+                <div class="max-w-2xl mx-auto">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-xl font-bold text-gray-800">2018 - Early Research</h3>
+                        <p class="text-gray-600">The initial concept was born. Research began on the feasibility of a multi-modal AI for Indian health data.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-xl font-bold text-gray-800">2020 - Development Phase 1</h3>
+                        <p class="text-gray-600">Core architecture development and initial model training with foundational datasets.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-xl font-bold text-gray-800">2023 - Community Growth</h3>
+                        <p class="text-gray-600">Open-sourcing of the initial repository and the start of active community contributions and hackathons.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot" style="border-color: #f97316;"></div>
+                        <h3 class="text-xl font-bold text-gray-800">Q1 2026 - Official Launch</h3>
+                        <p class="text-gray-600">Public release of Jeevadhara 1.0, including APIs and SDKs for partners.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-xl font-bold text-gray-800">Future Roadmap</h3>
+                        <p class="text-gray-600">Integration of wearable data, voice-based inputs for non-literate populations, and a focus on predictive, preventive AI.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Impact Statement -->
+        <section class="py-20 bg-teal-800 text-white text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold">Join Us in Building the Future of Automated Diagnosis.</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-teal-100">Jeevadhara has the potential to redefine healthcare access not only in India but in any region facing similar challenges. Your contribution can make a world of difference.</p>
+                <div class="mt-8">
+                    <a href="index.html#cta" class="cta-button text-white text-lg font-bold py-4 px-10 rounded-full shadow-lg">
+                       Become a Contributor
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+ <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <h3 class="text-xl font-bold text-white mb-2">Jeevadhara</h3>
+                    <p class="text-gray-400">An open-source initiative for global health.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white tracking-wider uppercase mb-4">Navigation</h4>
+                    <ul>
+                        <li class="mb-2"><a href="/about us.html" class="hover:text-white">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-500 cursor-not-allowed">Blog / Updates (Soon)</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-500 cursor-not-allowed">Documentation (Soon)</a></li>
+                        <li class="mb-2"><a href="#" class="hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white tracking-wider uppercase mb-4">Community</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-500 cursor-not-allowed"><span class="sr-only">GitHub</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg></a>
+                        <a href="#" class="text-gray-500 cursor-not-allowed"><span class="sr-only">Twitter</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
+                    </div>
+                </div>
+                <div>
+                     <h4 class="font-semibold text-white tracking-wider uppercase mb-4">Legal</h4>
+                     <ul>
+                        <li class="mb-2"><a href="/privacy.html" class="hover:text-white">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="/terms.html" class="hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Jeevadhara Project. A community-driven initiative.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+</html>
+
